@@ -1,0 +1,254 @@
+#N canvas 1732 154 835 515 10;
+#X declare -path ./abs;
+#X declare -path ./externals;
+#N canvas 221 72 450 300 genramp 0;
+#X obj -155 10 until;
+#X msg -155 -13 1000;
+#X obj -151 44 f;
+#X obj -118 46 + 1;
+#X obj -143 -64 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -142 -42 t b b;
+#X msg -110 10 0;
+#X obj -150 92 / 1000;
+#X obj -150 140 tabwrite linear-ramp;
+#X obj -150 68 t f f;
+#X obj -150 116 expr min($f1*1 \, ($f1*(-1))+1)*2;
+#X obj -70 -13 table linear-ramp 1000;
+#X obj -124 -63 loadbang;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 2 0 9 0;
+#X connect 3 0 2 1;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 5 1 6 0;
+#X connect 6 0 2 1;
+#X connect 7 0 10 0;
+#X connect 9 0 7 0;
+#X connect 9 1 8 1;
+#X connect 10 0 8 0;
+#X connect 12 0 5 0;
+#X restore 297 -358 pd genramp;
+#X obj 297 -402 declare -path ./abs;
+#X obj 297 -380 declare -path ./externals;
+#N canvas 118 294 954 370 cues 0;
+#X msg 588 96 \; loader-1a 2 4 \; loader-2a 2 2 \; loader-3a 5 10 \;
+loader-4a 8 12;
+#X text 694 119 + low-freq-noise;
+#X obj 79 -22 r SynthTableCue;
+#X obj 79 28 sel 1 2 3 4;
+#X floatatom 79 3 5 0 0 0 - - -;
+#X text 186 -7 organize these into collections of cues triggered with
+1 <----- receive:;
+#X msg 80 89 \; loader-1a 2 4 \; loader-2a 2 2 \; loader-3a 5 9 \;
+loader-4a 9 21 \; loader-5a 2 2 \; loader-6a 9 8 \; loader-7a 5 9 \;
+loader-8a 2 24 \; loader-9a 3 14 \; loader-10a 11 65;
+#X text 186 138 good bass mostly smooth with a little buzz;
+#X text 185 158 very smooth middle range some upper harmonics;
+#X text 186 176 also good in upper register -liquid organ like sound
+;
+#N canvas 0 22 810 644 combinations 0;
+#X msg 43 192 \; loader-1a 11 14 \; loader-2a 13 19 \; loader-3a 13
+22 \; loader-4a 8 18 \; loader-5a 2 2;
+#X text 149 228 good bass with double resonance;
+#X text 144 135 good bass mostly smooth with a little buzz;
+#X msg 42 284 \; loader-1a 2 13 \; loader-2a 2 3 \; loader-3a 11 25
+\; loader-4a 9 25 \; loader-5a 2 4;
+#X text 148 317 good bass less resonance;
+#X text 143 407 smooth middle range not much change;
+#X msg 42 459 \; loader-6a 9 8 \; loader-7a 5 9 \; loader-8a 2 24 \;
+loader-9a 3 14 \; loader-10a 11 65;
+#X text 146 496 very smooth middle range some upper harmonics;
+#X text 147 514 also good in upper register -liquid organ like sound
+;
+#X text 149 335 kind of organ/accordian esque in upper range.;
+#X msg 484 157 \; loader-1a 15 8 \; loader-2a 15 52 \; loader-3a 15
+11 \; loader-4a 15 21 \; loader-5a 15 23;
+#X text 607 179 good high pitched timbre;
+#X text 607 266 good high pitched timbre;
+#X msg 484 244 \; loader-1a 19 9 \; loader-2a 19 5 \; loader-3a 19
+19 \; loader-4a 19 33 \; loader-5a 19 29;
+#X text 604 285 a little buzz;
+#X text 607 351 good high pitched timbre;
+#X msg 484 329 \; loader-1a 19 19 \; loader-2a 19 31 \; loader-3a 19
+32 \; loader-4a 19 37 \; loader-5a 19 35;
+#X text 604 370 a little more buzz;
+#X text 608 95 good high pitched timbre;
+#X msg 484 70 \; loader-1a 21 5 \; loader-2a 21 3 \; loader-3a 21 8
+\; loader-4a 21 6 \; loader-5a 21 2;
+#X text 607 110 smooth;
+#X text 607 437 good high pitched timbre;
+#X text 606 455 based on piano waves;
+#X msg 484 415 \; loader-1a 26 21 \; loader-2a 26 15 \; loader-3a 26
+16 \; loader-4a 26 20 \; loader-5a 26 30;
+#X text 606 541 high buzz;
+#X msg 484 501 \; loader-1a 12 25 \; loader-2a 12 27 \; loader-3a 12
+15 \; loader-4a 12 26 \; loader-5a 12 33;
+#X msg 43 373 \; loader-6a 2 4 \; loader-7a 2 2 \; loader-8a 5 9 \;
+loader-9a 9 21 \; loader-10a 2 2;
+#X msg 43 104 \; loader-1a 2 4 \; loader-2a 2 2 \; loader-3a 5 9 \;
+loader-4a 9 21 \; loader-5a 2 2;
+#X restore 590 63 pd combinations;
+#X connect 2 0 4 0;
+#X connect 3 0 6 0;
+#X connect 4 0 3 0;
+#X restore -172 -402 pd cues;
+#N canvas 998 136 522 491 noisemaker 0;
+#X obj -46 427 tabwrite~ 5a;
+#X obj -46 32 noise~;
+#X obj -25 404 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom -2 177 5 0 0 0 - - -;
+#X obj -46 174 lop~;
+#X obj -46 201 lop~;
+#X obj -46 227 lop~;
+#X obj -46 266 *~;
+#X floatatom 29 214 5 0 0 0 - - -;
+#X obj 29 236 dbtorms;
+#X floatatom -3 62 5 0 0 0 - - -;
+#X obj -46 60 hip~;
+#X obj -46 87 hip~;
+#X obj -46 113 hip~;
+#X floatatom 62 53 5 0 0 0 - - -;
+#X obj 61 78 mtof;
+#X floatatom 69 146 5 0 0 0 - - -;
+#X obj 69 171 mtof;
+#X text 139 141 if you want to write filtered noise to a table;
+#N canvas 0 22 865 627 hanning 0;
+#X obj 102 216 phasor~;
+#X obj 102 244 cos~;
+#X obj 33 338 tabwrite~ hanning;
+#X obj 40 262 -~;
+#X obj 38 228 sig~ 1;
+#X msg 47 190 0;
+#X text 151 23 CALCULATE HANNING;
+#X text 151 37 WINDOW TABLE;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array hanning 1024 float 0;
+#X coords 0 1 1023 -1 400 300 1;
+#X restore 300 243 graph;
+#X msg 456 81 \; hanning resize 1024;
+#X obj 103 141 / 1024;
+#X obj 103 181 sig~;
+#X text 185 158 sample rate / window size;
+#X msg 33 154 bang;
+#X obj 76 279 sig~ 0.5;
+#X obj 59 310 *~;
+#X obj 77 106 samplerate~;
+#X obj 35 33 r window-size;
+#X obj 35 63 t b f;
+#X msg 446 124 \; window-size 1024;
+#X obj 446 48 loadbang;
+#X connect 0 0 1 0;
+#X connect 1 0 3 1;
+#X connect 3 0 15 0;
+#X connect 4 0 3 0;
+#X connect 5 0 0 1;
+#X connect 10 0 11 0;
+#X connect 11 0 0 0;
+#X connect 13 0 2 0;
+#X connect 13 0 5 0;
+#X connect 14 0 15 1;
+#X connect 15 0 2 0;
+#X connect 16 0 10 0;
+#X connect 17 0 18 0;
+#X connect 18 0 16 0;
+#X connect 18 0 13 0;
+#X connect 18 1 10 1;
+#X connect 20 0 9 0;
+#X connect 20 0 19 0;
+#X restore 248 262 pd hanning;
+#X obj -31 318 line~;
+#X obj -46 370 *~;
+#X obj 106 270 samplerate~;
+#X msg 106 365 600;
+#X obj 118 400 /;
+#X obj 106 340 t b f;
+#X msg -31 294 0 \, 1024 \$1;
+#X floatatom 118 428 5 0 0 0 - - -;
+#X obj -31 343 tabread~ hanning;
+#X obj 106 297 / 1000;
+#X obj 143 172 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 143 195 t b b;
+#X connect 1 0 11 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 1;
+#X connect 3 0 5 1;
+#X connect 3 0 6 1;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 21 0;
+#X connect 8 0 9 0;
+#X connect 9 0 7 1;
+#X connect 10 0 11 1;
+#X connect 10 0 12 1;
+#X connect 10 0 13 1;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 4 0;
+#X connect 14 0 15 0;
+#X connect 15 0 10 0;
+#X connect 16 0 17 0;
+#X connect 17 0 3 0;
+#X connect 20 0 28 0;
+#X connect 21 0 0 0;
+#X connect 22 0 29 0;
+#X connect 23 0 24 0;
+#X connect 24 0 27 0;
+#X connect 25 0 23 0;
+#X connect 25 1 24 1;
+#X connect 26 0 20 0;
+#X connect 27 0 26 0;
+#X connect 28 0 21 1;
+#X connect 29 0 25 0;
+#X connect 30 0 31 0;
+#X connect 31 0 2 0;
+#X connect 31 1 22 0;
+#X restore -154 -360 pd noisemaker;
+#N canvas 909 400 882 424 interpolators 0;
+#X obj 10 21 interpolator 6a 7a 8a 9a 10a int-2;
+#X obj 10 -183 interpolator 1a 2a 3a 4a 5a int-1;
+#X obj 437 21 interpolator 6a 7a 8a 9a 10a int-5;
+#X obj 437 -183 interpolator 1a 2a 1a 4a 2a int-4;
+#X obj 646 -183 interpolator 1a 2a 3a 4a 5a int-6;
+#X obj 219 -183 interpolator 1a 2a 3a 6a 10a int-3;
+#X restore -172 -381 pd interpolators;
+#X obj -200 -330 loader 1a;
+#N canvas 0 22 481 423 readme 0;
+#X text 36 95 http://www.adventurekid.se/akrt/waveforms/adventure-kid-waveforms/
+;
+#X text 36 35 This patch is made to work with the collection of 4350
+single cycle waveforms assembled by Kristoffer Ekstrand. Many Thanks
+for making these available.;
+#X text 37 171 It is my hope that creating a browsable format for the
+waveforms and an easy to use interpolatable wavetable synthesizer in
+PD will facilitate greater timbre flexibility for beginning PD users.
+;
+#X text 37 240 Some of the Waveforms have been relabeled to facilitate
+library lookup from within the PD patch.;
+#X text 38 297 I cannot guarantee individual support for all users
+of this patch/paradigm but if you have questions please email me at
+rsnow@tulane.edu.;
+#X text 228 345 happy synthesizing! - Rick;
+#X restore 486 -386 pd readme;
+#N canvas 0 22 481 423 documentation 0;
+#X text 48 35 eventually this will contain documentation:;
+#X text 44 115 This patch works by keeping the 0-WaveTables-load in
+main directory and a folder called "abs" in the same directory. Within
+"abs" subpatches wiggler1.pd \, interpolator.pd \, loader.pd \, and
+wigglerCOS.pd must be kept.;
+#X text 44 85 Dependencies: meant to work with PD-extended;
+#X restore 486 -363 pd documentation;
+#X obj 126 -330 loader 3a;
+#X obj -37 -330 loader 2a;
+#X obj 289 -330 loader 4a;
+#X obj 452 -330 loader 5a;
+#X obj -200 -117 loader 6a;
+#X obj -37 -117 loader 7a;
+#X obj 126 -117 loader 8a;
+#X obj 289 -117 loader 9a;
+#X obj 452 -117 loader 10a;

@@ -1,0 +1,12 @@
+#N canvas 776 40 450 300 10;
+#X obj 30 43 netreceive 32000;
+#X obj 30 64 route test;
+#X obj 87 88 prepend set;
+#X msg 87 114;
+#X floatatom 30 88 5 0 0 0 - - -;
+#X floatatom 123 65 5 0 0 0 - - -;
+#X connect 0 0 1 0;
+#X connect 0 1 5 0;
+#X connect 1 0 4 0;
+#X connect 1 1 2 0;
+#X connect 2 0 3 0;

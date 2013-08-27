@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/19Er99/xhtml">
+
+<head>
+  <title>Beat Machine - Eric Bohanon</title>
+  <link href='http://fonts.googleapis.com/css?family=Rationale|Armata|Open+Sans:600' rel='stylesheet' type='text/css'>
+  <link href="css/styles.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div id="page">
+    <div id="site_title_contain">
+    <div id="page">
+      <div id="title_contain">
+          <div id="menu">
+            <ul>
+              <li><span class="color01">01</span> <a href="index.html">Home</a></li>
+              <li><span class="color01">02</span> <a href="projects.html">Projects</a></li>
+              <li><span class="color01">03</span> <a href="resume.html">R&eacute;sum&eacute;</a></li>
+              <li><span class="color01">04</span> <a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div id="site_title">
+            <span>Eric Bohanon</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="primary_content">
+      <div id="page_content">
+        <div id="main_pic">
+          <img align="middle" src="./images/BeatMachine/BeatMachineFront.jpg" />
+        </div>
+        <h1>Beat Machine</h1>
+        <h2>Randomizing 4 bars of music 1 beat at a time</h2>
+        <p>Taking a short hook and creating derivations of it to compose interesting music has been a fundamental part of composition for a long time (i.e. centuries). Now, with the advent of pop music, listeners value hooks more than ever. I had the idea to take these short, often 4 measure hooks and provide a way to mix them together, vary them and create something else entirely with them.</p>
+        <p>That's where Beat Machine comes in.</p>
+        <p>Beat Machine, at its core, takes a 4 measure sample (preferably of something catchy), and has the ability to play it faster, slower, pitched, with added effects, and all sorts of good stuff. Then, you mix it with catchy phrases of different songs, providing a truly unique experience. The most useful tool that Beat Machine gives you is the ability to randomize each quarter note beat of the song. You can randomize any number of these quarter notes, 1 to 16, at any given time (with 1 just providing a simple "beat repeat" function found in most samplers).</p>
+        <p>Convenient interactive GUI elements were implemented to allow users to manipulate real-time global and local parameters. Keyboard input also eases the process of mixing together the tracks, as well as data for the M-Audio axiom keyboard (explanation for how to use this is included in the patch).</p>
+        <h2>Example mix:</h2>
+        <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F80171451"></iframe>
+        <p>Notice that Beat Machine is great for creating textural as well as rhythmic oriented music, highlighting its versatility. Feel free to download Beat Machine <a href="./dl/BeatMachine/BeatMachine.zip"><span class="color01">here</span></a>.</p>
+        <p>All the instructions on how to work it can be found in the helpful ReadMe file in the patch, but you'll need to download <a href="http://puredata.info/downloads/pd-extended"><span class="color01">Pd-extended</span></a> before opening the patch. I've also included a collection of pre-cut, 4-bar samples for use with the mixer, but any song that is in a 4/4 meter can serve as source material for Beat Machine. I have also implemented a "Record Session" function in the patch, allowing for quick placement of stereo files of your mixes to be placed in a folder in the same directory as Beat Machine.</p>
+        <h2>Screenshots:</h2>
+        <img class="project" src="./images/BeatMachine/BeatContainer.jpg" />
+        <p class="cap">Control Patch</p>
+        <img class="project" src="./images/BeatMachine/VoicePic.jpg" />
+        <p class="cap">Sample Voice</p>
+        <img class="project" src="./images/BeatMachine/selection.jpg" />
+        <p class="cap">Beat Repeat Key Sends</p>
+        <img class="project" src="./images/BeatMachine/midi.jpg" />
+        <p class="cap">MIDI In</p>
+        <img class="project" src="./images/BeatMachine/effects.jpg" />
+        <p class="cap">Effects Patch</p>
+        <img class="project" src="./images/BeatMachine/keys.jpg" />
+        <p class="cap">More Key Sends</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
